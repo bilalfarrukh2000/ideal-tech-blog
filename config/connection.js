@@ -5,13 +5,14 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.DATABASE_URL) {
+if (process.env.DB_LINK) {
   sequelize = new Sequelize(process.env.DB_LINK, {dialectOptions: {
     ssl: {
         rejectUnauthorized: false
     }
 }});
 } else {
+  console.log('Using local DB');
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
