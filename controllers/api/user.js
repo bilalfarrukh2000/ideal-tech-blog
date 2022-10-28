@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.render('homepage',{logged_in: req.session.logged_in});
+      res.render('home',{logged_in: req.session.logged_in});
     });
   
 });
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.render('homepage',{logged_in: req.session.logged_in});
+      res.render('home',{logged_in: req.session.logged_in});
     });
 
   } catch (err) {
@@ -64,7 +64,7 @@ router.post('/logout', (req, res) => {
 router.get('/', async (req, res) => {
 
   const userData = await User.findOne({ where: { id: req.session.user_id } });
-  const userName=userData.dataValues.name;
+  const userName=userData.dataValues.email;
 
   console.log(userName);
   

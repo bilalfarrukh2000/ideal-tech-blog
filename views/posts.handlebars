@@ -1,0 +1,15 @@
+
+    {{#each array}}
+        
+        <div class="card" style="width: 50rem; margin:2rem">
+            <div class="card-body">
+                <h5 class="card-title">{{this.dataValues.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Posted by: {{this.dataValues.name}}</h6>
+                <p class="card-text">{{this.dataValues.content}}</p>
+            </div>
+        </div>
+       
+    {{/each}}
+    </table>
+
+<script src="./js/logout.js"></script>

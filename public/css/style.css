@@ -1,0 +1,13 @@
+.addPost{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.heading{
+    width: 200px;
+}
+
+.body {
+    height: 300px;
+}

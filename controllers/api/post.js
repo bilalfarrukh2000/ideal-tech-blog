@@ -8,9 +8,8 @@ router.get('/', async (req, res) => {
 
   try {
     const data = await Post.findAll({});
-
-    
     res.status(200).json(data);
+    console.log(data);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -34,6 +33,5 @@ router.post('/', async(req,res) => {
     res.status(400).json(err);
   }
 })
-  
-  
-  module.exports = router;
+
+module.exports = router;
