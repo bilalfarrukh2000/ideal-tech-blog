@@ -12,7 +12,6 @@ if (process.env.DATABASE_URL) {
     }
 }});
 } else {
-  console.log('Using local DB');
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -22,7 +21,7 @@ if (process.env.DATABASE_URL) {
       dialect: 'mysql',
       port: 3306
     },
-    //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0',
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0',
   );
 }
 
